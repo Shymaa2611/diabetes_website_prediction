@@ -1,0 +1,67 @@
+{%load static%}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+<!DOCTYPE html>
+<html>
+<header>
+    <style>
+    body{
+      background-color:rgb(48, 45, 45);
+    }
+
+    </style>
+</header>
+<body>
+  
+
+
+
+<form method="post">
+    {%csrf_token%}
+    <label style="color:aquamarine; font-size: 45px; margin-left:550px ;margin-top: 50px;"> Welcome !</label>
+    <div style="width:500px ;height: 70px;margin-top:80 px; margin-left: 400px;">
+        {% bootstrap_field form.Pregnancies%}
+    </div>
+    <div style="width:500px ;height: 70px;margin-top: 5px; margin-left: 400px;">
+        {% bootstrap_field form.Glucose%}
+    </div>
+    <div style="width:500px ;height: 70px;margin-top: 5px; margin-left: 400px;">
+        {% bootstrap_field form.BloodPressure%}
+    </div>
+    <div style="width:500px ;height: 70px;margin-top: 5px; margin-left: 400px;">
+        {% bootstrap_field form.SkinThickness%}
+    </div>
+    <div style="width:500px ;height: 70px;margin-top: 5px; margin-left: 400px;">
+        {% bootstrap_field form.Insulin%}
+    </div>
+    <div style="width:500px ;height: 70px;margin-top: 5px; margin-left: 400px;">
+        {% bootstrap_field form.BMI%}
+    </div>
+    <div style="width:500px ;height: 70px;margin-top: 5px; margin-left: 400px;">
+        {% bootstrap_field form.DiabetesPedigreeFunction%}
+    </div>
+    <div style="width:500px ;height: 70px;margin-top: 5px; margin-left: 400px;">
+        {% bootstrap_field form.age%}
+    </div>
+    <div>
+        <button style="color: black; background-color: aquamarine;border-radius:20px ;width: 200px;height:70px ; margin-top: 20px; margin-left:550px ; font-size: 25px;" type="submit">Predict</button>
+    </div>
+    <div style="color: black; background-color: aquamarine;border-radius:20px ;width: 500px;height:50px ; margin-top: 20px; margin-left:400px ; font-size: 35px;">
+        {%if predict%}
+            <p style="text-align: center">Person is {{predict}}</p>
+            {%else%}
+            <p style="text-align: center"></p>
+            {%endif%}
+    
+    </div>
+    
+</form>
+    
+
+
+
+</body>
+
+</html>
